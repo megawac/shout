@@ -62,10 +62,10 @@ function colors(text) {
     if (regex.color.test(text)) {
     	var match;
         while (match = regex.color.exec(text)) {
-            var color = "color-" + match[1];
+            var color = "color-" + (+match[1]);
             var bg = match[2];
             if (bg) {
-           		color += " bg-" + bg;
+           		color += " bg-" + (+bg);
            	}
             var text = text.replace(
             	match[0],
